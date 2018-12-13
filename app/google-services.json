@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "771197689236",
+    "firebase_url": "https://photosaloon-79925.firebaseio.com",
+    "project_id": "photosaloon-79925",
+    "storage_bucket": "photosaloon-79925.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771197689236:android:3c99db6855396d2a",
+        "android_client_info": {
+          "package_name": "com.photosaloon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771197689236-knushlugphmh4031pkovgs8c7ecpbdi6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCihxXRbJDU4a1Y_MfYrf27djRHWpDfC64"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
