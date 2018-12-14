@@ -1,4 +1,4 @@
-package com.photosaloon.ui.record;
+package com.photosaloon.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

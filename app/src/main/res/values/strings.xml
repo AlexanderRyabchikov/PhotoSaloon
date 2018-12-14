@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">PhotoSaloon</string>
+    <string name="title_toolbar_default">Фотостудия</string>
+    <string name="title_toolbar_record">Запись</string>
+    <string name="title_toolbar_my_record">Мои записи</string>
+    <string name="title_toolbar_profile">Мой профиль</string>
+
+    <!-- Dialog -->
+    <string name="dialog_ok">ОК</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_send">Отправить</string>
+    <string name="dialog_no">Нет</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_loading_title">Загрузка данных</string>
+    <string name="dialog_loading_content">Пожалуйста, подождите…</string>
+    <string name="dialog_not_authorized">Для этого действия необходима авторизация</string>
+    <string name="dialog_server_is_not_available">Сервер недоступен</string>
+    <string name="dialog_auth_error_title">Ошибка авторизации</string>
+
+
+    <string name="exit_title">Выйти из аккаунта</string>
 </resources>

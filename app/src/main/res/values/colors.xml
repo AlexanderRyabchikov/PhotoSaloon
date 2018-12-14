@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="toolbar_bg">#0D0D0D</color>
+
+
+    <!-- Dialogs -->
+    <color name="dialog_bg">#424242</color>
+    <color name="dialog_caption">#FFFFFF</color>
+    <color name="dialog_text">#C6C6C6</color>
+    <color name="dialog_button">#82CCC4</color>
+
+    <color name="tabbar_bg">#0D0D0D</color>
+    <color name="tabbar_bg_selected">#252525</color>
+    <color name="tabbar_text">#6D6D6D</color>
+    <color name="tabbar_text_selected">#FFFFFF</color>
 </resources>
