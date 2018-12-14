@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_logo"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical"
+            android:background="@android:color/black"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/login_dot_divider"
+                android:layerType="software"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/login_caption"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
+
+
+            <EditText
+                android:id="@+id/edit_id"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/login_edit_text_bg"
+                android:gravity="center"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/login_id"/>
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="8dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/login_edit_text_bg"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/login_password"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/login_dot_divider"
+                android:layerType="software"
+                android:layout_marginTop="48dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_enter"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="-24dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginRight="84dp"
+            android:background="@drawable/login_button_enter_bg"
+            android:textColor="@android:color/black"
+            android:text="@string/login_enter"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:layout_below="@id/ll_login_form"/>
+
+    </RelativeLayout>
+
+</ScrollView>

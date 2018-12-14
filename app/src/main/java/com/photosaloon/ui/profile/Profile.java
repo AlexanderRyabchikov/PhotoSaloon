@@ -1,4 +1,10 @@
 package com.photosaloon.ui.profile;
 
-public class Profile {
+import com.photosaloon.ui.base.BaseFragment;
+
+public class Profile extends BaseFragment {
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
 }
