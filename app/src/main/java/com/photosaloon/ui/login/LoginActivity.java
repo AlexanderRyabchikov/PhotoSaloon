@@ -65,17 +65,6 @@ public class LoginActivity  extends BaseActivity implements GoogleApiClient.OnCo
 
     }
 
-    private void handleFirebaseAuthResult(AuthResult authResult) {
-        if (authResult != null) {
-            // Welcome the user
-            FirebaseUser user = authResult.getUser();
-            showToastLongTime("Welcome " + user.getEmail());
-
-            // Go back to the main activity
-            startActivity(new Intent(this, MainActivity.class));
-        }
-    }
-
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
@@ -93,6 +82,10 @@ public class LoginActivity  extends BaseActivity implements GoogleApiClient.OnCo
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+            } else {
+
+                showToastLongTime("Authentication failed.");
+
             }
         }
     }
@@ -100,19 +93,16 @@ public class LoginActivity  extends BaseActivity implements GoogleApiClient.OnCo
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mFirebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                .addOnCompleteListener(this, task -> {
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            showToastLongTime("Authentication failed.");
-                        } else {
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            finish();
-                        }
+                    // If sign in fails, display a message to the user. If sign in succeeds
+                    // the auth state listener will be notified and logic to handle the
+                    // signed in user can be handled in the listener.
+                    if (!task.isSuccessful()) {
+                        showToastLongTime("Authentication failed.");
+                    } else {
+                        startActivity(new Intent(getBaseContext(), MainActivity.class));
+                        finish();
                     }
                 });
     }
