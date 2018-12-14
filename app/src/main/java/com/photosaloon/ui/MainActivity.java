@@ -76,9 +76,13 @@ public class MainActivity extends BaseActivity implements GoogleApiClient.OnConn
     private void initTabs() {
 
         adapter = new TabAdapter(getSupportFragmentManager(), this);
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(1);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(TabAdapter.PAGE_MY_RECORD).setIcon(R.drawable.tabbar_ic_1_selector);
+        tabLayout.getTabAt(TabAdapter.PAGE_NEW_RECORD).setIcon(R.drawable.tabbar_ic_2_selector);
+        tabLayout.getTabAt(TabAdapter.PAGE_PROFILE).setIcon(R.drawable.tabbar_ic_3_selector);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

@@ -84,7 +84,7 @@ public class LoginActivity  extends BaseActivity implements GoogleApiClient.OnCo
                 firebaseAuthWithGoogle(account);
             } else {
 
-                showToastLongTime("Authentication failed.");
+                showToastLongTime("Authentication failed." + result.getStatus().getStatusMessage() + result.getStatus().getStatusCode());
 
             }
         }
