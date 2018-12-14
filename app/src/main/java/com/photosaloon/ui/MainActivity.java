@@ -42,12 +42,6 @@ public class MainActivity extends BaseActivity implements GoogleApiClient.OnConn
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
@@ -131,21 +125,6 @@ public class MainActivity extends BaseActivity implements GoogleApiClient.OnConn
     }
 
     private void loadMyRecord() {
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-
-        switch (item.getItemId()){
-            case R.id.logout_menu_item:
-                showExitDialog();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-        return true;
     }
 
     private void showExitDialog() {
