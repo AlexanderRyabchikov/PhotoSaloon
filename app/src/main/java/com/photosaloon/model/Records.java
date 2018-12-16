@@ -13,8 +13,6 @@ public class Records {
     @PrimaryKey(autoGenerate = true)
     public long id;
 
-    public String nameClient;
-
     public String nameMaster;
 
     public String date;

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:id="@+id/root"
+    android:focusable="true"
+    android:layout_margin="4dp"
+    android:background="@drawable/item_list_bg"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_cart_hint_close"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Мастер: "
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/master_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            tools:text="Петров Петр Петрович" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/login_dot_divider"
+        android:layerType="software"
+        android:layout_marginTop="4dp"/>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Дата: "
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            tools:text="15.12.2009" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/login_dot_divider"
+        android:layerType="software"
+        android:layout_marginTop="4dp"/>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Время: "
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            tools:text="15:00" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/login_dot_divider"
+        android:layerType="software"
+        android:layout_marginTop="4dp"/>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Список выбранных услуг: "
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/list_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            tools:text="Фото,\nкостюм,\nприческа" />
+
+    </LinearLayout>
+
+</LinearLayout>
