@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_fragment_container"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/view_header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layerType="software"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/login_dot_divider" />
+
+
+    <Button
+        android:id="@+id/button_enter"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginRight="84dp"
+        android:background="@drawable/login_button_enter_bg"
+        android:textColor="@android:color/black"
+        android:text="@string/login_exit"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

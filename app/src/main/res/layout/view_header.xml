@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        android:id="@+id/header"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/profile_avatar_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:id="@+id/user_avatar_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layerType="software"
+                android:src="@drawable/avatar_placeholder"
+                tools:ignore="ContentDescription"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/user_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/profile_avatar_layout"
+            android:layout_toRightOf="@+id/profile_avatar_layout"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Тарасова"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_last_name"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/profile_avatar_layout"
+            android:layout_toRightOf="@+id/profile_avatar_layout"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Ольга"/>
+
+        <ImageView
+            android:id="@+id/edit_profile"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:src="@drawable/ic_profile_edit"
+            android:layout_alignParentEnd="true"
+            android:focusable="true" />
+
+    </RelativeLayout>

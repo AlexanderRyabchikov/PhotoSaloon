@@ -23,6 +23,7 @@
     <string name="login_id">Логин (Email)</string>
     <string name="login_password">Пароль</string>
     <string name="login_enter">Войти</string>
+    <string name="login_exit">Выйти</string>
     <string name="login_id_error">Введите логин</string>
     <string name="login_password_error"> Введите пароль</string>
 
