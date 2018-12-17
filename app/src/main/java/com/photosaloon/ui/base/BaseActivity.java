@@ -18,11 +18,11 @@ import com.photosaloon.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    protected CompositeSubscription compositeSubscription = new CompositeSubscription();
+    protected CompositeDisposable compositeSubscription = new CompositeDisposable();
 
     @Nullable
     @BindView(R.id.toolbar)
@@ -80,7 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        compositeSubscription.unsubscribe();
+        compositeSubscription.clear();
     }
 
     public void showLoading() {

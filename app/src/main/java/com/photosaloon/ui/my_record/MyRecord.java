@@ -2,7 +2,6 @@ package com.photosaloon.ui.my_record;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,11 +13,10 @@ import com.photosaloon.ui.base.BaseListFragment;
 import com.photosaloon.ui.my_record.Injectors.MyRecordInjector;
 
 import net.idik.lib.slimadapter.SlimAdapter;
-
 import butterknife.BindView;
+import io.reactivex.Completable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import rx.Completable;
-import rx.android.schedulers.AndroidSchedulers;
 
 public class MyRecord extends BaseListFragment<SlimAdapter> {
 
@@ -36,12 +34,16 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
                     .setMessage("Вы уверены что хотите удалить запись?")
                     .setPositiveButton("Да", ((dialogInterface, i) -> {
 
-                        Completable
-                                .fromAction(() -> App
+
+                            Completable.fromAction(() -> App
                                         .getDataBase()
                                         .daoRecords()
                                         .delete(item))
-                                .observeOn(AndroidSchedulers.mainThread());
+                                    .subscribeOn(Schedulers.io())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(()->{
+                                        showToastLongTime("Запись успешно удалена");
+                                    });
 
                         dialogInterface.dismiss();
                     }))
@@ -51,9 +53,6 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
 
         }
     };
-
-    @NonNull
-    private final SlimAdapter adapter = SlimAdapter.create();
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -72,22 +71,27 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
 
     private void loadRecords() {
 
-        Completable.fromAction(() -> App
+        compositeSubscription.add(
+                App
                 .getDataBase()
                 .daoRecords()
                 .getAllRecords()
                 .subscribeOn(Schedulers.io())
-                .doOnSubscribe(disposable -> {
-                    if (adapter.getItemCount() == 0) {
-                        showLoading();
-                    }
-                })
-                .doOnEach(listNotification -> hideLoading())
-                .subscribe(records -> {
-                    adapter.updateData(records);
-                    updateEmptyView();
-                })
+                .observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe(disposable -> {
+                            if (adapter.getItemCount() == 0) {
+                                showLoading();
+                            }
+                        })
+                        .doOnEach(listNotification -> hideLoading())
+                        .subscribe(records -> {
+                            adapter.updateData(records);
+                            updateEmptyView();
+                        })
+
+
         );
+
 
     }
 

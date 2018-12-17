@@ -2,13 +2,16 @@ package com.photosaloon.content;
 
 public enum Gender {
 
-    MALE(1),
-    FEMALE(2);
+    MALE(0),
+    FEMALE(1);
 
+    private final int type;
 
     Gender(int i) {
         this.type = i;
     }
 
-    private int type;
+    public int getValue() {
+        return type;
+    }
 }

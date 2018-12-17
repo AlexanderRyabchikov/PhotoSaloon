@@ -29,13 +29,7 @@ public class MyRecordInjector implements SlimInjector<Records> {
                 .text(R.id.time_record, data.time)
                 .with(R.id.list_services, view -> {
 
-                    String listServices = "";
-
-                    for (Services item : data.typeServices) {
-                        listServices += item.typeServices + "\n";
-                    }
-
-                    ((TextView)view).setText(listServices);
+                    ((TextView)view).setText(data.typeServices);
 
                 });
     }

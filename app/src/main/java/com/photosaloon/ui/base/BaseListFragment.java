@@ -5,11 +5,13 @@ import android.view.View;
 
 import com.photosaloon.R;
 
+import net.idik.lib.slimadapter.SlimAdapter;
+
 import butterknife.BindView;
 
-public abstract class BaseListFragment<T extends RecyclerView.Adapter> extends BaseEmptyFragment {
+public abstract class BaseListFragment<T extends SlimAdapter> extends BaseEmptyFragment {
 
-    protected T adapter;
+    protected SlimAdapter adapter = SlimAdapter.create();
 
     // This fields are marked as public for ButterKnife normal binding
     @BindView(R.id.recycler_view) public RecyclerView recyclerView;

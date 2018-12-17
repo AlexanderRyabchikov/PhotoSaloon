@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected CompositeSubscription compositeSubscription = new CompositeSubscription();
+    protected CompositeDisposable compositeSubscription = new CompositeDisposable();
 
     private Unbinder unbinder;
 
@@ -44,7 +44,7 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        compositeSubscription.unsubscribe();
+        compositeSubscription.clear();
         super.onDestroy();
     }
 

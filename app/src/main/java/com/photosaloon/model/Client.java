@@ -1,10 +1,7 @@
 package com.photosaloon.model;
 
-import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-
-import com.photosaloon.content.Gender;
 
 @Entity
 public class Client {
@@ -20,8 +17,7 @@ public class Client {
 
     public String email;
 
-    @Embedded
-    public Gender gender;
+    public int gender;
 
     public String bithday;
 
