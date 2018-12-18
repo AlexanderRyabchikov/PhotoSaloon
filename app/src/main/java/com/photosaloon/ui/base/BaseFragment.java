@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposables;
 
 public abstract class BaseFragment extends Fragment {
 
