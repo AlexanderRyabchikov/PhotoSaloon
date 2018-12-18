@@ -29,4 +29,40 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
+    <style name="AppTheme.TextAppearance" parent="TextAppearance.AppCompat"/>
+
+    <style name="AppTheme.ProfileDetail.Section" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">30dp</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.ProfileDetail.Section</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.ProfileDetail.Section" parent="AppTheme.TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Profile.Field" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Profile.Item</item>
+        <item name="android:background">@color/dialog_text</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Profile.Item" parent="AppTheme.TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>

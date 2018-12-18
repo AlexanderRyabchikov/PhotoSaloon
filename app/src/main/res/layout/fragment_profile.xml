@@ -14,11 +14,86 @@
 
     <ImageView
 
+        android:id="@+id/bottom_divider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layerType="software"
         android:layout_marginTop="30dp"
         android:src="@drawable/login_dot_divider" />
+
+
+        <LinearLayout
+            android:layout_below="@+id/bottom_divider"
+            android:id="@+id/info_user"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:focusableInTouchMode="true"
+            android:text="Номер телефона"
+            style="@style/AppTheme.ProfileDetail.Section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tabbar_text"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/profile_detail_phone"
+                style="@style/AppTheme.Profile.Field"
+                android:drawableRight="@drawable/ic_profile_edit"
+                tools:ignore="RtlHardcoded"
+                tools:text="+7 (904) 461-20-55"
+                android:enabled="false"
+                android:textColor="@color/colorAccent"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/AppTheme.ProfileDetail.Section"
+            android:layout_marginTop="40dp"
+            android:text="EMAIL"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tabbar_text"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/tabbar_text"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/profile_detail_email"
+                    style="@style/AppTheme.Profile.Field"
+                    android:drawableRight="@drawable/ic_profile_edit"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="test@example.com"
+                    android:enabled="false"
+                    android:textColor="@color/colorAccent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <ImageView
+
+                android:id="@+id/top_divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layerType="software"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/login_dot_divider" />
+        </LinearLayout>
+
 
 
     <Button

@@ -61,15 +61,4 @@
             android:textStyle="bold"
             tools:text="Ольга"/>
 
-        <ImageView
-            android:id="@+id/edit_profile"
-            android:padding="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:clickable="true"
-            android:src="@drawable/ic_profile_edit"
-            android:layout_alignParentEnd="true"
-            android:focusable="true" />
-
     </RelativeLayout>
