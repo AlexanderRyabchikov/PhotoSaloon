@@ -6,13 +6,17 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import com.photosaloon.model.Client;
+
+import java.util.List;
+
+import io.reactivex.Flowable;
 import io.reactivex.Single;
 
 @Dao
 public interface DaoClient {
 
     @Query("SELECT * FROM Client")
-    Single<Client> getClient();
+    Flowable<List<Client>> getClient();
 
     @Insert
     void insert (Client client);

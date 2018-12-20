@@ -41,9 +41,7 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
                                         .delete(item))
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribe(()->{
-                                        showToastLongTime("Запись успешно удалена");
-                                    });
+                                    .subscribe(()-> showToastLongTime("Запись успешно удалена"));
 
                         dialogInterface.dismiss();
                     }))

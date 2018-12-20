@@ -47,9 +47,9 @@
                 android:id="@+id/profile_detail_phone"
                 style="@style/AppTheme.Profile.Field"
                 android:drawableRight="@drawable/ic_profile_edit"
-                tools:ignore="RtlHardcoded"
+                tools:ignore="RtlHardcoded,TextFields"
                 tools:text="+7 (904) 461-20-55"
-                android:enabled="false"
+                android:inputType="none"
                 android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
@@ -75,9 +75,9 @@
                     android:id="@+id/profile_detail_email"
                     style="@style/AppTheme.Profile.Field"
                     android:drawableRight="@drawable/ic_profile_edit"
-                    tools:ignore="RtlHardcoded"
+                    tools:ignore="RtlHardcoded,TextFields"
                     tools:text="test@example.com"
-                    android:enabled="false"
+                    android:inputType="none"
                     android:textColor="@color/colorAccent"/>
 
             </LinearLayout>
@@ -93,21 +93,6 @@
                 android:layout_marginTop="80dp"
                 android:src="@drawable/login_dot_divider" />
         </LinearLayout>
-
-
-
-    <Button
-        android:id="@+id/button_enter"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginRight="84dp"
-        android:background="@drawable/login_button_enter_bg"
-        android:textColor="@android:color/black"
-        android:text="@string/login_exit"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"/>
 
     </RelativeLayout>
 

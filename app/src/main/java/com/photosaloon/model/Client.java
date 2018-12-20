@@ -17,6 +17,4 @@ public class Client {
 
     public String email;
 
-    public String bithday;
-
 }
