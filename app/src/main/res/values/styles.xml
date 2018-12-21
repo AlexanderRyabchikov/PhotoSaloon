@@ -65,4 +65,22 @@
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Button" parent="AppTheme">
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">190dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Button.White" parent="AppTheme.TextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Button.White.Invisible.Address" parent="AppTheme.Button">
+        <item name="android:background">@drawable/bg_button_invisible_white_for_address</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Button.White</item>
+    </style>
+
 </resources>

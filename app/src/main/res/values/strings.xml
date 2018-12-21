@@ -5,6 +5,8 @@
     <string name="title_toolbar_my_record">Мои записи</string>
     <string name="title_toolbar_profile">Мой профиль</string>
 
+    <string name="select_services">Выбрать</string>
+
     <!-- Dialog -->
     <string name="dialog_ok">ОК</string>
     <string name="dialog_yes">Да</string>
