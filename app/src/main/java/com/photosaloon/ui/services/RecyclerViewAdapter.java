@@ -1,7 +1,6 @@
 package com.photosaloon.ui.services;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -9,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.photosaloon.R;
@@ -22,14 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import butterknife.BindView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private List<ServicesModel> mModelList;
 
-    @BindView(R.id.select_services)
-    Button saveServices;
 
     public RecyclerViewAdapter(List<ServicesModel> modelList) {
         mModelList = modelList;
@@ -51,20 +46,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.textViewName.setText(servicesModel.getTypeServices());
         holder.sum.setText(getFormattedPrice(holder.context, servicesModel.getPrice()));
 
-        holder.view.setBackgroundColor(servicesModel.isSelected()
-                ? Color.DKGRAY
-                : holder.context.getResources().getColor(R.color.dialog_bg));
+        holder.view.setBackground(servicesModel.isSelected()
+                ? holder.context.getResources().getDrawable(R.drawable.item_list_bg_select)
+                : holder.context.getResources().getDrawable(R.drawable.item_list_bg));
 
         holder.view.setOnClickListener(view -> {
-            servicesModel.setSelected(!servicesModel.isSelected());
-            mModelList.get(position).setSelected(!servicesModel.isSelected());
-            holder.view.setBackgroundColor(servicesModel.isSelected()
-                    ? Color.DKGRAY
-                    : holder.context.getResources().getColor(R.color.dialog_bg));
 
-            if (saveServices.getVisibility() == View.GONE) {
-                saveServices.setVisibility(View.VISIBLE);
-            }
+            holder.view.setBackground(mModelList.get(position).isSelected()
+                    ? holder.context.getResources().getDrawable(R.drawable.item_list_bg)
+                    : holder.context.getResources().getDrawable(R.drawable.item_list_bg_select));
+
+            mModelList.get(position).setSelected(!servicesModel.isSelected());
 
         });
 
@@ -76,7 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mModelList == null ? 0 : mModelList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
 
         private View view;
@@ -88,11 +80,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(View itemView) {
             super(itemView);
 
+            itemView.setOnClickListener(this);
             view = itemView;
+            view.setOnClickListener(this);
             context = itemView.getContext();
 
             textViewName = itemView.findViewById(R.id.services_name);
             sum = itemView.findViewById(R.id.service_price);
+        }
+
+        @Override
+        public void onClick(View v) {
+
         }
     }
 

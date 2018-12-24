@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -26,7 +29,9 @@ import com.photosaloon.config.AppDataBase;
 import com.photosaloon.config.AppPref;
 import com.photosaloon.model.Client;
 import com.photosaloon.model.Records;
+import com.photosaloon.ui.TabAdapter;
 import com.photosaloon.ui.base.BaseFragment;
+import com.photosaloon.ui.my_record.MyRecord;
 import com.photosaloon.ui.services.Services;
 
 import java.util.ArrayList;
@@ -231,7 +236,9 @@ public class Record extends BaseFragment {
                         .insert(records))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(() -> showToast("Данные добавлены"));
+                .subscribe(() -> {
+                    showToast("Данные добавлены");
+                });
 
     }
 

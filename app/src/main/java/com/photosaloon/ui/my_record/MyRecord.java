@@ -29,7 +29,7 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
         @Override
         public void onDelete(Records item) {
 
-            new AlertDialog.Builder(getContext())
+            AlertDialog dialog = new AlertDialog.Builder(getContext())
                     .setTitle("Внимание")
                     .setMessage("Вы уверены что хотите удалить запись?")
                     .setPositiveButton("Да", ((dialogInterface, i) -> {
@@ -46,8 +46,11 @@ public class MyRecord extends BaseListFragment<SlimAdapter> {
                         dialogInterface.dismiss();
                     }))
                     .setNegativeButton("Нет", (dialogInterface, i) -> dialogInterface.dismiss())
-                    .create()
-                    .show();
+                    .create();
+            dialog.show();
+
+            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
 
         }
     };
