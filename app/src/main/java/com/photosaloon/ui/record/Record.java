@@ -236,9 +236,7 @@ public class Record extends BaseFragment {
                         .insert(records))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(() -> {
-                    showToast("Данные добавлены");
-                });
+                .subscribe(() -> showToast("Вы записаны"));
 
     }
 
