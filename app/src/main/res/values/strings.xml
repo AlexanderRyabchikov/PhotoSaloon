@@ -5,6 +5,9 @@
     <string name="title_toolbar_my_record">Мои записи</string>
     <string name="title_toolbar_profile">Мой профиль</string>
 
+    <string name="common_price_template">%1$s ₽</string>
+    <string name="common_price_template_old">%1$s р.</string>
+
     <string name="select_services">Выбрать</string>
 
     <!-- Dialog -->
