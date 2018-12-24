@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.widget.TextView;
 
 import com.photosaloon.R;
-import com.photosaloon.content.Services;
 import com.photosaloon.model.Records;
 
 import net.idik.lib.slimadapter.SlimInjector;
