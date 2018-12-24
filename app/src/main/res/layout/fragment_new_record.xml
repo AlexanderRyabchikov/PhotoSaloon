@@ -71,7 +71,8 @@
         android:id="@+id/masters"
         android:layout_marginTop="20dp"
         style="@style/AppTheme.Profile.Field"
-        tools:ignore="RtlHardcoded,TextFields"
+        tools:ignore="HardcodedText,RtlHardcoded,TextFields"
+        android:spinnerMode="dialog"
         android:textColor="@color/colorAccent"/>
 
     <ImageView

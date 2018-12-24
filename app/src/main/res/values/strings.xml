@@ -35,4 +35,5 @@
     <string name="login_caption">Авторизация/Регистрация</string>
     <string name="exit_text">Вы уверены, что хотите выйти из аккаунта?</string>
     <string name="exit_title">Выйти из аккаунта</string>
+    <string name="master_select">Выберите мастера</string>
 </resources>

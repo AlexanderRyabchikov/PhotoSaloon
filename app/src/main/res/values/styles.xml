@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/app_bg</item>
         <item name="actionOverflowMenuStyle">@style/popUpTheme</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerStyle</item>
     </style>
 
     <style name="AppTheme.Splash" parent="@style/Theme.AppCompat.Light">
@@ -54,9 +55,15 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingBottom">12dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Profile.Item</item>
-        <item name="android:background">@color/dialog_text</item>
+        <item name="android:background">@drawable/drawable_edit_text</item>
         <item name="android:clickable">true</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textViewStyle">@style/AppTheme.Profile.Field</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Profile.Item" parent="AppTheme.TextAppearance">
