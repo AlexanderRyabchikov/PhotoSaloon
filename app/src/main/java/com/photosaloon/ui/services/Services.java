@@ -73,7 +73,7 @@ public class Services extends BaseActivity {
         if (!listServices.equals("")) {
 
             Intent intent = new Intent();
-            intent.putExtra(AppPref.SERVICES_RESULT, intent);
+            intent.putExtra(AppPref.SERVICES_RESULT, listServices);
             setResult(RESULT_OK, intent);
             finish();
 

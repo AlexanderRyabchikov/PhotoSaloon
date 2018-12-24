@@ -1,6 +1,8 @@
 package com.photosaloon.ui.record;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,9 +23,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.photosaloon.R;
 import com.photosaloon.config.App;
 import com.photosaloon.config.AppDataBase;
+import com.photosaloon.config.AppPref;
 import com.photosaloon.model.Client;
 import com.photosaloon.model.Records;
 import com.photosaloon.ui.base.BaseFragment;
+import com.photosaloon.ui.services.Services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -233,6 +237,19 @@ public class Record extends BaseFragment {
 
     @OnClick(R.id.service)
     public void onClickService(){
+
+        startActivityForResult(new Intent(getContext(), Services.class), AppPref.REQUEST_CODE_SERVICES);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK && requestCode == AppPref.REQUEST_CODE_SERVICES) {
+            if (data != null) {
+                textViewService.setText(data.getStringExtra(AppPref.SERVICES_RESULT));
+            }
+        }
 
     }
 }
