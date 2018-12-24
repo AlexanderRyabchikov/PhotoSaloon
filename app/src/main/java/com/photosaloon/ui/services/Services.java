@@ -66,7 +66,7 @@ public class Services extends BaseActivity {
 
         for (ServicesModel item : adapter.getSelectItems()) {
 
-            listServices += item.getTypeServices();
+            listServices += item.getTypeServices() + "\n";
 
         }
 
